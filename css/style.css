@@ -381,7 +381,7 @@ margin-bottom: -35px;
   padding-bottom: 5px;
 }
 
-/*@media (max-width:1000px){
+@media (max-width:1000px){
   .nav{
     height:auto;
     padding:1em;
@@ -427,4 +427,4 @@ text-align: center;
   visibility: hidden;
 }
 }
-}*/
+}

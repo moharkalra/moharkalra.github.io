@@ -1,0 +1,435 @@
+.Banner{
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height:100%;
+  margin-bottom: -25px;
+  padding: 0 0px;
+top:-15px;
+ }
+
+
+
+
+.nav {
+    background-color:black;
+    color:white;
+  margin-top:-10px;
+    position:absolute;
+text-align: center;
+height:30px;
+padding-top:10px;
+padding-bottom:10px;
+    width:100%;
+
+z-index:10;
+
+}
+
+
+}
+.fixed {
+    position:fixed;
+    top:0px;
+    margin-top: 0px;
+}
+.tech{
+
+margin-bottom:50px
+
+}
+.portfolio-left {
+
+  position: relative;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  right:25px;
+transition: height 0.2s, width 0.2s;
+
+}
+.portfolio-right {
+
+  position: relative;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  left:25px;
+transition: height 0.2s, width 0.2s;
+
+}
+
+
+.profile{
+  position: relative;
+
+overflow: hidden;
+  height: 300px;
+  width: 300px;
+border-radius: 150px;
+background-color: rgb(255, 249, 241);
+border-width: 3px;
+border-color: white;
+border-style: double;
+  margin: auto;
+  right:75px;
+top:0px;
+}
+
+
+.desc {
+border-bottom-left-radius: 25px;
+border-bottom-right-radius: 25px;
+  position: absolute;
+  top: 250px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  color: white;
+  text-align: center;
+  padding-top:10px;
+  padding-bottom: 10px;
+  visibility: hidden;
+  opacity: 0;
+margin: auto;
+  /* transition effect. not necessary*/
+  transition: opacity .2s, visibility .2s;
+}
+
+
+
+.top{
+  margin-top:-25px;
+}
+
+
+.sec{
+
+  margin-top:-100px;
+}
+
+
+.img-holder {
+border-radius: 25px;
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   transition: height 0.2s, width 0.2s;
+}
+.img-holder img {
+
+  position: relative;
+  display: block;
+
+  top:-50px ;
+  right:100px;
+
+}
+.portfolio-left:hover .tooltiptext {
+  visibility: visible;
+  opacity: .7;
+
+}
+.portfolio-right:hover .tooltiptext {
+  visibility: visible;
+  opacity: .7;
+
+}
+
+.portfolio-left:hover .desc {
+  visibility: visible;
+  opacity: .7;
+
+}
+.img-holder:hover{
+  width:325px;
+  height:325px;
+}
+.portfolio-left:hover{
+  width:325px;
+  height:325px;
+}
+.portfolio-right:hover{
+  width:325px;
+  height:325px;
+}
+.portfolio-right:hover .desc{
+  visibility: visible;
+  opacity: .7;
+
+}
+
+.strip{
+  position:relative;
+  height:500px;
+  top:-100px ;
+  left:-25px;
+}
+.TB{
+  position:relative;
+  height:400px;
+  top:100px;
+  left:-50px;
+
+}
+.banpic{
+  position:relative;
+  height:400px;
+  top:100px;
+  left:-250px;
+}
+.bilpic{
+  position:relative;
+  height:400px;
+  top:100px;
+  left:-250px;
+}
+.about{
+position:relative;
+margin-top: 130px;
+margin-bottom: -60px;
+padding-bottom: 80px;
+color:white;
+background-color: rgb(203, 80, 65);
+width: 100%;
+max-width:100%;
+
+}
+#about{
+margin-top: -10px;
+padding-top:10px;
+}
+.about .sec{
+  position:relative;
+  top:50px;
+}
+
+.bout{
+margin-top:-45px;
+margin-bottom:0px
+
+}
+.me{
+
+margin-top: 50px;
+margin-left: -110px;
+}
+#contact{
+margin-top: -75px;
+}
+.links{
+text-align: center;
+margin-top: -20px;
+}
+.fav1{
+padding:10px;
+
+}
+.cp{
+background-color: black;
+  color:white;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 10px;
+}
+#end{
+margin-top: -10px;
+  background-color: black;
+  width:100%;
+
+}
+
+
+.big{
+
+  transition: all 0.2s;
+  display: inline-block;
+}
+.big:hover{
+  transform:scale(1.1);
+}
+.icon-letterboxd:hover{
+    transform:scale(1.1);
+}
+
+.me{
+position:relative;
+right:27px;
+
+}
+ul{
+
+  position:relative;
+  right:27px;
+  top:-10px;
+}
+li{
+  margin-bottom: 4px;
+  display:inline-flex;
+}
+li span{
+position: relative;
+  left:10px;
+  top:-5px;
+}
+.fa-exclamation{
+position: relative;
+  left:5px;
+
+}
+#three{
+  position: relative;
+    left:17px;
+
+}
+hr{
+  position:relative;
+  top:-15px;
+ margin: 0;
+
+}
+
+.portfolio-right .tooltiptext {
+    visibility: hidden;
+    width: 325px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    left: -350px;
+
+}
+
+.portfolio-right .tooltiptext::after {
+  content: "";
+   position: absolute;
+   top: 50%;
+   left: 100%;
+   margin-top: -5px;
+   border-width: 5px;
+   border-style: solid;
+   border-color: transparent transparent transparent black;
+}
+.portfolio-left .tooltiptext {
+    visibility: hidden;
+    width: 325px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    left: 330px;
+
+}
+
+.portfolio-left .tooltiptext::after {
+  content: "";
+   position: absolute;
+   top: 50%;
+   right: 100%;
+   margin-top: -5px;
+   border-width: 5px;
+   border-style: solid;
+   border-color: transparent black transparent transparent;
+}
+.main hr, #contact hr{
+  border-color: rgb(203, 80, 65);
+  width:100px;
+position: relative;
+top:-30px;
+margin-left: auto;
+margin-right: auto;
+}
+.propic{
+position: relative;
+top:-175px;
+left:0px;
+}
+.arrow-down {
+  width: 0px;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+
+
+  border-top: 10px solid rgb(203, 80, 65);;
+  z-index: 30;
+  margin-left: 95%;
+
+  position: relative;
+  top:-45px;
+  margin-bottom: -15px;
+}
+.hrdesc{
+  border-color: rgb(203, 80, 65);
+  width:5px;
+position: relative;
+padding-top: 5px;
+
+margin-left: auto;
+margin-right: auto;
+margin-bottom: -35px;
+}
+.desc p{
+  padding-bottom: 5px;
+}
+
+@media (max-width:1000px){
+  .nav{
+    height:auto;
+    padding:1em;
+  }
+.portfolio-right, .portfolio-left{
+
+  left:0px;
+  right:0px;
+
+}
+.portfolio-right{
+  margin-bottom: 50px;
+
+}
+
+.x{
+width:100%;
+  margin-top:50px;
+position:relative;
+left:0;
+right:0;
+margin:auto;
+text-align: center;
+margin-top:60px;
+margin-bottom:15px;
+}
+.profile{
+  position: relative;
+  right:0;
+  left:0;
+}
+.me{
+  width:80%;
+  left:0px;
+  right:0px;
+  margin:auto;
+text-align: center;
+}
+.sec h3 {
+  padding-top: 50px;
+}
+.arrow-down{
+  visibility: hidden;
+}
+}
+}

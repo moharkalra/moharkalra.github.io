@@ -1,0 +1,24 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "7e3fecbc1772d0cb95b8ab400d230176",
+      "css": "letterboxd",
+      "code": 59392,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M345.4 698V300H272.8V200H536.4V300H463.7V698.9H627.2V589.8H745.5V800H272.7V698H345.5ZM0 500C0 776.2 223.8 1000 500 1000S1000 776.2 1000 500 776.2 0 500 0 0 223.8 0 500Z",
+        "width": 1000
+      },
+      "search": [
+        "letterboxd"
+      ]
+    }
+  ]
+}

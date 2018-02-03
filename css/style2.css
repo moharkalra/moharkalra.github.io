@@ -1,0 +1,146 @@
+
+
+
+
+
+.nav {
+    background-color:black;
+    color:white;
+    position:fixed;
+    top:0px;
+    margin-top: 0px;
+text-align: center;
+height:auto;
+padding-top:1em;
+padding-bottom:1em;
+    width:100%;
+z-index:10;
+}
+
+.comic p{
+
+  text-align:left;
+
+  margin-bottom: 8px;
+}
+
+
+.about{
+
+
+  color:white;
+  background-color: rgb(203, 80, 65);
+  width: 100%;
+  max-width:100%;
+}
+
+.comic{
+  padding-top: 25px;
+  padding-bottom:25px;
+  padding-left: auto;
+  padding-right: auto;
+text-align: center;
+}
+.cp{
+background-color: black;
+  color:white;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 10px;
+}
+#end{
+
+  background-color: black;
+  width:100%;
+z-index:11;
+}
+h3{
+  text-align: left;
+  color:white;
+  margin-bottom:20px;
+}
+h4{
+
+  padding:0px;
+padding-bottom: 15px;
+  margin:0px;
+}
+
+.comic h4{
+  text-align: left;
+}
+ul{
+  text-align: left;
+}
+li{
+  padding-left: 50px;
+}
+.about a, .about a:link, .about a:visited{
+color:black;
+text-align: left;
+}
+.big{
+color:black;
+  transition: all 0.2s;
+  display: inline-block;
+
+}
+.big:hover{
+  transform:scale(1.1);
+}
+.fav1{
+padding:10px;
+color:black;
+}
+.pic1{
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+.pic{
+  height:500px;
+
+}
+.columns{
+  overflow: hidden;
+}
+.sec{
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}
+.sec1{
+
+  display: inline-block;
+}
+.sec p{
+  margin-top: -10px;
+  padding-bottom: 15px;
+}
+.bout p{
+  text-align: left;
+}
+.me p{
+
+  padding-top: 5px;
+}
+@media (max-width:1000px){
+  .nav{
+    height:auto;
+    padding:1em;
+  }
+.columns{
+  width:80%
+}
+.sec{
+  width:80%;
+
+}
+.about{
+
+  margin-top:60px;
+}
+
+  }
+}

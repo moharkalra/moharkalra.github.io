@@ -99,6 +99,22 @@ color:black;
 .pic{
   height:500px;
 
+
+}
+.code{
+background-color: rgb(220, 220, 220);
+  text-align: left;
+
+  height:500px;
+  width:100%;
+  overflow:scroll;
+}
+.pic2{
+  height:500px;
+display:block;
+margin-left:auto;
+margin-right:auto;
+
 }
 .columns{
   overflow: hidden;

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Dead Singers Society Submission</title>
+  <meta name="description" content="Portfolio">
+  <meta name="author" content="Mohar Kalra">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/style2.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--  <link rel="icon" type="image/png" href="images/favicon.png">-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+  </head>
+  <body>
+
+
+
+            <div  class = "nav fixed">
+        <div class = "container">
+          <div class = "three columns ">
+              <a href="index.html#about">About</a>
+          </div>
+        <div class = "three columns ">
+            <a href="index.html#tech">Projects</a>
+        </div>
+        <div class = "three columns ">
+            <a href="index.html#art">Art</a>
+        </div>
+        <div class = "three columns">
+            <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+      </div>
+
+
+
+<div id = "about" class = "about">
+  <div  class = "container sec">
+          <h3>Dead Singers Society Submission</h3>
+    <div class = "row bout">
+      <div class = "six columns">
+        <div class = "me">
+          <p>This comic was produced as 2-page submission to the Dead Singers Society Anthology. The anthology is structured around artists producing a 2-page piece related in some way to a dead singer. I chose to write mine about Dolores O'Riordan of the Cranberries.</p>
+      </div>
+      </div>
+
+    <div class = "six columns">
+
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+  <div class = "comic">
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+
+        <div class="mySlides">
+          <div class="numbertext">1 / 2</div>
+          <img class = "pic1" src="Comics/DSS/DSS1.jpg" alt = "banner" style="max-width:50% ; height:auto;">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 2</div>
+          <img class = "pic1" src="Comics/DSS/DSS2.jpg" alt = "banner" style="max-width:50% ; height:auto;">
+        </div>
+
+
+        <!-- Next/previous controls -->
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+
+        <!-- Thumbnail image controls -->
+
+      </div>
+    </div>
+      </div>
+
+
+</div>
+
+
+<div id = "end">
+
+
+    <div class = "cp">
+      <p>
+        &copy; 2017 all rights reserved Mohar Kalra.
+      </p>
+
+  </div>
+</div>
+
+
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+  <script>
+  // Open the Modal
+  function openModal() {
+    document.getElementById('myModal').style.display = "block";
+  }
+
+  // Close the Modal
+  function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+  }
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
+  </html>

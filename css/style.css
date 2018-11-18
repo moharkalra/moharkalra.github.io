@@ -165,6 +165,12 @@ border-radius: 25px;
   top:-100px ;
   left:-25px;
 }
+.novelty{
+  position:relative;
+  height:700px;
+  top:0px;
+  left:-30px;
+}
 .TB{
   position:relative;
   height:400px;

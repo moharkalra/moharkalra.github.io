@@ -329,7 +329,19 @@ opacity:1.0;
 
   top: 0;
 }
+.title {
+  color: rgb(22, 28, 250);
+  font-size: 1.5em;
 
+  padding: 8px 25px;
+  position: relative;
+  margin-bottom: 50px;
+  top: 0;
+}
+.title a {
+  color: rgb(22, 28, 250);
+
+}
 /* Caption text */
 .caption-container {
   text-align: center;

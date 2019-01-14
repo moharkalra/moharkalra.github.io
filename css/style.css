@@ -227,7 +227,7 @@ margin: auto;
   display: inline-block;
   text-align: center;
   position: relative;
-
+  vertical-align: top;
   box-shadow: -10px 10px rgb(255, 0, 246);
    transition: all 0.2s;
    background-color: rgb(22, 28, 250);
@@ -243,7 +243,7 @@ margin: auto;
   position: relative;
   box-shadow: -10px 10px rgb(255, 0, 246);
    transition: all 0.2s;
-
+vertical-align: top;
    border-top-right-radius: 50px;
    overflow: hidden;
     background-color: rgb(22, 28, 250);
@@ -587,6 +587,9 @@ margin-bottom: -35px;
     width:50%;
     margin-left:auto;
     margin-right:auto;
+  
+    display: inline-flex;
+
   }
   #ad{width:100%;}
   .main .row{
@@ -594,18 +597,24 @@ margin-bottom: -35px;
 
     margin-left: auto;
     margin-right:auto;
+
   }
   #tech, #art{
     padding-top:50px;
     padding-bottom: 0px;
   }
   .portfolio-right, .portfolio-left{
-
+    box-sizing: border-box;
     left:0px;
     right:0px;
       margin-bottom: 50px;
+      margin-left: auto;
+      margin-right:auto;
 
   }
+.main .three.columns:nth-child(3){
+  clear: left;
+}
   .portfolio-right{
 
   margin-right: 25px;

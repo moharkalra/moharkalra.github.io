@@ -271,16 +271,7 @@ margin: auto;
   right:100px;
 
 }
-.portfolio-left:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
 
-}
-.portfolio-right:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-
-}
 
 
 #border:hover  #img-holder{
@@ -289,7 +280,7 @@ margin: auto;
   height:315px;
 
 }
-.portfolio-left #border:hover{
+#border:hover{
 
   width:325px;
   height:325px;
@@ -297,14 +288,8 @@ margin: auto;
   margin-left:-12.5px;
 
 }
-.portfolio-right #border:hover{
 
-  width:325px;
-  height:325px;
-  margin-top:-12.5px;
-  margin-right:-12.5px;
 
-}
 .portfolio-left:hover{
 
   width:325px;
@@ -548,56 +533,7 @@ hr{
 
 }
 
-.portfolio-right .tooltiptext {
-    visibility: hidden;
-    width: 325px;
-    background-color: rgb(22, 28, 250);
-    color: #fff;
-    text-align: center;
-    border-radius: 15px;
-    padding: 10px 10px;
-    position: absolute;
-    z-index: 1;
-    bottom: 0px;
-    left: -350px;
 
-}
-
-.portfolio-right .tooltiptext::after {
-  content: "";
-   position: absolute;
-   top: 50%;
-   left: 100%;
-   margin-top: -5px;
-   border-width: 5px;
-   border-style: solid;
-   border-color: transparent transparent transparent rgb(22, 28, 250);
-}
-.portfolio-left .tooltiptext {
-    visibility: hidden;
-    width: 325px;
-    background-color: rgb(22, 28, 250);
-    color: #fff;
-    text-align: center;
-    border-radius: 15px;
-    padding: 10px 10px;
-    position: absolute;
-    z-index: 1;
-    bottom: 0px;
-    left: 330px;
-
-}
-
-.portfolio-left .tooltiptext::after {
-  content: "";
-   position: absolute;
-   top: 50%;
-   right: 100%;
-   margin-top: -5px;
-   border-width: 5px;
-   border-style: solid;
-   border-color: transparent rgb(22, 28, 250) transparent transparent;
-}
 .main hr, .contact hr{
   border-color: rgb(255, 0, 246);
   width:100px;

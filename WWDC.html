@@ -1,0 +1,613 @@
+<!--
+
+
+
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>City Slicking</title>
+  <meta name="description" content="Portfolio">
+  <meta name="author" content="Mohar Kalra">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/style3.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--  <link rel="icon" type="image/png" href="images/favicon.png">-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+  </head>
+  <body>
+
+
+
+        <div  class = "nav">
+    <div class = "container">
+      <div class = "three columns ">
+          <a href="index.html#about" class = "big" >ABOUT</a>
+
+      </div>
+    <div class = "three columns ">
+        <a href="index.html#tech1" class = "big">TECH</a>
+
+    </div>
+    <div class = "three columns ">
+        <a href="index.html#ad"  class = "big">ART</a>
+
+    </div>
+    <div class = "three columns">
+        <a href="index.html#contact"  class = "big">CONTACT</a>
+
+    </div>
+    </div>
+    </div>
+
+
+
+<div id = "about" class = "about">
+  <span  class = " sec">
+          <h3>City Slicking</h3>
+    <div class = "row bout">
+      <div class = "six columns">
+        <div class = "me">
+          <h4>Background</h4>
+            <p><i>Spring 2019</i></p>
+          <p> During Spring of 2019, I became aware of the WWDC scholarship challenge. THe challenge required that, over the course of about a month, students build a short, 3-minute max visual experience using Apple's Swift Playgrounds platform. The winners would then be sponsored to attend Apple's annual tech conference WWDC. While I did not win a scholarship, this project was still a lot of fun to work and helped familiarize myself with the Swift programming language. </p>
+      </div>
+      </div>
+
+    <div class = "six columns">
+      <div class = "me">
+        <h4>Objective</h4>
+          <p>Design an engaging yet simple 3 minute experience showcasing the capabilities of Apple's swift libraries as developer tools.</p>
+    </div>
+    </div>
+  </div>
+</span>
+</div>
+
+<div class = "row comic">
+
+
+    <h4>Design</h4>
+      <ul>
+
+
+        <p>Parameters:</p><li>Interaction parameters immediately evident to users</li><li>Highlights capabilities of a specific Swift Library</li><li>Immediately engaging visuals</li><li>Creative and fun conceit</li>
+
+
+        <p>Solution:</p>
+          <li>Concept:
+            <ul>
+              <li>Users drag and drop construction workers onto an invisible isometric grid</li>
+              <li>Construction workers construct a one-story building</li>
+              <li>As more buildings are constructed, buildings begin to evolve and form a bustling, randomly generated city on screen</li>
+
+            </ul>
+
+          </li>
+          <li>Hand-drawn frames animated using SpriteKit</li>
+          <li>Used randomly timers to spawn cars, planes and swamp monsters around growing city</li>
+          <li>Devloped a snap to grid functionality to allow users to drop workers onto unoccupied sections of the city's isometric grid</li>
+
+
+          <div class ="sec1">
+            <p>Demo of City Slicking</p>
+            <iframe width="1120" height="630" src="https://www.youtube.com/embed/P5DAQXR6EFs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </ul>
+          <p>Playground Code</p>
+          <div class = "code">
+            <pre>
+          import PlaygroundSupport
+          import UIKit
+          import SpriteKit
+          //CITY SLICKING by Mohar Kalra
+          class GameScene: SKScene {
+            //Initializes all animation SKTexture arrays for each type of sprite that can be spawned
+            private var wiggly = SKSpriteNode()
+            private var wigglyFrames: [SKTexture] = []
+            private var drop = SKSpriteNode()
+            private var dropFrames: [SKTexture] = []
+            private var background = SKSpriteNode()
+            private var buildprocessFrames: [SKTexture] = []
+            private var buildingFrames: [SKTexture] = []
+            private var car1Frames: [SKTexture] = []
+            private var car2Frames: [SKTexture] = []
+            private var planeFrames: [SKTexture] = []
+            private var potholeFrames: [SKTexture] = []
+            private var buildingFrames2: [SKTexture] = []
+            private var buildingFrames3: [SKTexture] = []
+            //Keeps track of the grid points on the screen that are occupied by a building
+            private var usedPoints: [CGPoint] = []
+            //Keeps track of the number of planes spawned to ensure that the zpositions of each plane can be adjusted to prevent overlap
+            private var numPlanes = 0
+
+            func buildFrames(){
+                //populates the SKTexture arrays with hand-drawn animation frames
+                for i in 3...8 {
+                    let wigglyTextureName = "init000\(i).png"
+                    wigglyFrames.append(SKTexture(imageNamed: wigglyTextureName))
+                }
+
+                // build frames for drop
+                for i in 3...10 {
+                    let dropTextureName = "drop\(i).png"
+                    dropFrames.append(SKTexture(imageNamed: dropTextureName))
+                }
+
+                // build frames for build construction process
+                for i in 1...6 {
+                    let buildTextureName = "build000\(i).png"
+                    let texture = SKTexture(imageNamed: buildTextureName)
+                    buildprocessFrames.append(texture)
+                }
+                //build frames for one-storey building
+                for i in 0...4 {
+                    let buildingTextureName = "firstfloor000\(i).png"
+                    buildingFrames.append(SKTexture(imageNamed: buildingTextureName))
+                }
+                //build frames for two-storey building
+                for i in 3...8 {
+                    let building2TextureName = "secondfloor000\(i).png"
+                    buildingFrames2.append(SKTexture(imageNamed: building2TextureName))
+                }
+                //build frames for skyscraper
+                for i in 3...8 {
+                    let building3TextureName = "thirdfloor000\(i).png"
+                    buildingFrames3.append(SKTexture(imageNamed: building3TextureName))
+                }
+                //build frame for cars moving towards bottom left of screen
+
+                car1Frames.append(SKTexture(imageNamed: "1car0000.png"))
+                //build frame for cars moving towards top left of screen
+                car2Frames.append(SKTexture(imageNamed: "2car0000.png"))
+                //build frames for plane
+                for i in 0...4 {
+                    let planeTextureName = "plane000\(i).png"
+                    planeFrames.append(SKTexture(imageNamed: planeTextureName))
+                }
+                //build frames for pothole and pothole monster
+                for i in 1...8 {
+                    let potholeTextureName = "pot000\(i).png"
+                    potholeFrames.append(SKTexture(imageNamed: potholeTextureName))
+                }
+            }
+
+            override func didMove(to view: SKView) {
+                //when view is first presented, creates a background image node with gameplay instructions and start screen
+                background = SKSpriteNode(imageNamed: "start.png")
+                //anchors background to bottom left corner
+                background.anchorPoint = CGPoint(x:0, y:0)
+                background.zPosition = -5000
+                // adds background to SKScene
+                addChild(background)
+                //populates global SKTexture arrays
+                buildFrames()
+
+            }
+
+            func buildwiggly() -> SKSpriteNode {
+
+
+                //Creates a sprite node with the animation frames of the wiggly character
+                let w = SKSpriteNode(texture: wigglyFrames[0], size: CGSize(width:256, height:256))
+                //adds wiggly sprite to scene
+                addChild(w)
+                //animates the wiggly sprite to be squirming perpetually
+                let processAnim = SKAction.animate(with: wigglyFrames, timePerFrame: 0.1)
+                w.run(SKAction.repeatForever(processAnim))
+
+                return w
+            }
+
+            func buildDrop() {
+
+                // creates the building foundation
+                let drop = SKSpriteNode(texture: dropFrames[0], size: CGSize(width:256, height:256))
+                addChild(drop)
+
+                //maps the user's finger location (represented by the wiggly sprite's location) to the closest available valid point on an invisible isometric grid to drop a new building foundation on
+                //Visually maps the wiggly sprite onto a worker figure in the animations of the construction cloud on the building foundation
+                if let dropPoint = gridPoint(pt:CGPoint(x:wiggly.position.x - 50, y:wiggly.position.y + 50)){
+
+                    //adds location of building foundation to usedPoints
+                    usedPoints.append(dropPoint)
+                    //sets building foundation's position to the isometric grid point dropPoint
+                    drop.position=dropPoint
+                    //sets the building foundation's z-index to be inversely proportional to it's y position.
+                    //this ensures that objects lower on the screen are placed on a higher layer than those higher on screen, imposing an isometric spatial hierarchy onto 2D sprites
+                    drop.zPosition = -drop.position.y
+                    //animate the building foundation with construction cloud animations
+                    let processAnim = SKAction.animate(with: dropFrames, timePerFrame: 0.1)
+                    drop.run(processAnim)
+
+                    // start a timer that calls the upgrade function, sparking a loop of upgrades to the building foundation
+                    Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(upgrade), userInfo: ["node": drop, "status": 0], repeats: false)
+                    // start a timer that calls the spawnCar function, resulting in a timed loop of cars spawning and driving across screen
+                    Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(spawnCar), userInfo: ["status": 0], repeats: false)
+
+                    // start a timer that calls the spawnPlane function, resulting in a timed loop of planes spawning and driving across screen after about a minute or so of gameplay
+                    Timer.scheduledTimer(timeInterval: 45.0 + TimeInterval.random(in: 0 ... 30), target: self, selector: #selector(spawnPlane), userInfo: ["status": 0], repeats: false)
+                }
+                    //if there are no valid points to drop a building onto, remove the drop node
+                else{
+                    drop.removeFromParent()
+                }
+
+            }
+            //converts an inputted point to an available point to drop a building on the isometric grid
+            func gridPoint(pt: CGPoint) ->CGPoint?{
+                //x equals the input x coordinate distance from x=0 in terms of 256x256 squares
+                let x = Int(round(pt.x/256.0))
+                //x equals the input y coordinate distance from y=0 in terms of 256x256 squares
+                let y = Int(round(pt.y/256.0))
+                //generates an offset of 128 px for every other row in the grid to emulate an isometric grid
+                let offset = (x%2 == 0) ? 0:128
+                //generates a point on screen coinciding with the isometric grid based on the calculated x, y and offset values
+                var gridpt = CGPoint(x: x*256 , y:y*256 + offset)
+                //checks if the point is already occupied by another building
+                if(checkUsed(pt: gridpt)){
+
+                    var testpt = gridpt
+                    //calculates the x and y differences between the input point and the calculated grid point
+                    let ydiff = gridpt.y - pt.y
+                    let xdiff = gridpt.x - pt.x
+                    //based on the input point's location relative to the calculated gridpoint, generate a new test point on the grid that is located approximately on the same vector relative to gridpt as the initial pt
+
+                    //if pt is lower than gridpt, set testpt's y value to be at the gridpoint immediately below gridpt
+                    if(Int(ydiff) > 50 ){
+                        testpt.y = gridpt.y - 256
+                    }
+                        //if pt is higher than gridpt, set testpt's y value to be at the gridpoint immediately above gridpt
+                    else if(Int(ydiff) < -50 ){
+                        testpt.y = gridpt.y + 256
+                    }
+                    //if pt is to the left of gridpt, set testpt's x value to be at the column of gridpoints immeidately to the left of gridpt
+                    if(Int(xdiff) > 50 ){
+                        testpt.x = gridpt.x - 256
+                        //adjusts testpt's y value to make the testpt coincide with the gridpoint either to the upper left or lower left of gridpt, depending on ydiff
+                        testpt.y = testpt.y + 128 * (ydiff)/abs(ydiff)
+                    }
+                        //if pt is to the right of gridpt, set testpt's x value to be at the column of gridpoints immeidately to the right of gridpt
+                    else if(Int(xdiff) < -50 ){
+                        testpt.x = gridpt.x + 256
+                        //adjusts testpt's y value to make the testpt coincide with the gridpoint either to the upper right or lower right of gridpt, depending on ydiff
+                        testpt.y = testpt.y + 128 * (ydiff)/abs(ydiff)
+
+                    }
+                    //if testpt is also occupied, then there are no valid points that would match the user's input point, so return nil
+                    if(checkUsed(pt: testpt)){
+
+                        return nil
+                    }
+                    //otherwise, set gridpt equal to the now valid testpt value
+                    gridpt = testpt
+
+                }
+
+
+                return gridpt
+            }
+            //parses through usedPoints array and checks if the input point matches any of them. Returns true if there is a match
+            func checkUsed(pt: CGPoint) -> Bool{
+                var used = false
+                for tempPt in usedPoints{
+                    if(tempPt.equalTo(pt)){
+                        used = true;
+                    }
+
+                }
+                return used
+            }
+            //generates a plane node to fly over the screen. Takes as an argument the timer that calls the function
+            @objc func spawnPlane(timer:Timer){
+                let userInfo = timer.userInfo as! Dictionary<String, AnyObject>
+                //extracts the plane whose spawning called the function and removes it from the scene to prevent clutter
+                if (userInfo["node"] != nil){
+                    let lastNode = userInfo["node"] as! SKSpriteNode
+                    lastNode.removeFromParent()
+
+                }
+                //increments the number of planes that have been spawned
+                numPlanes = numPlanes + 1
+                //randomly generates the width of the plane to mimic a plane flying at different altitudes relative to the city scene
+                let width = Int.random(in:500 ... 900)
+                //sets the plane size
+                let size = CGSize(width:width, height:width)
+                //generates the starting point for the plane to be just off of the right side of the screen
+                let startx = 600 + width/2
+                //generates a random y start position in the upper half or so of the screen, so that when the plane moves towards the bottom left of the screen, a good portion of it is visible in frame. The randomn start y value allows each plane to appear to have a different "flightpath"
+                let starty = Int.random(in: 500 ... 1200)
+                //Randomly determines the duration of the planes movement, thus modulating the speed of the spawned plane
+                let duration = TimeInterval.random(in: 2 ... 8)
+                //creates the plane node
+                let plane = SKSpriteNode(texture: planeFrames[0], size: size)
+                //adds plane to the scene
+                addChild(plane)
+                //sets the plane's start position
+                plane.position = CGPoint(x:startx, y:starty)
+                //sets the plane's z-position to be based on the value of NumPlanes, thus ensuring that each plane has a unique zposition. If any two planes are on screen they will not overlap in a way that disrupts the internal logic of the isometric space
+                plane.zPosition = CGFloat(2000 + numPlanes)
+                //sets up an animation action for the plane
+                let processAnim = SKAction.animate(with: planeFrames, timePerFrame: 0.1)
+
+                //sets up the movement of the plane across the screen towards the bottom left of the frame
+                let move = SKAction.moveBy(x: -1500, y: -1000, duration: TimeInterval(duration))
+
+                //runs the plane's animation and movement
+                plane.run(SKAction.group([move,  SKAction.repeatForever(processAnim)]))
+                //creates a timer to spawn another plane in 30 to 60 seconds
+                Timer.scheduledTimer(timeInterval: 30.0 + TimeInterval.random(in: 0 ... 30), target: self, selector: #selector(spawnPlane), userInfo: ["node": plane, "status": 0], repeats: false)
+            }
+
+            //generates a car node to drive across the screen. Takes as an argument the timer that calls the function
+            @objc func spawnCar(timer:Timer){
+                let userInfo = timer.userInfo as! Dictionary<String, AnyObject>
+                //extracts the car whose spawning called the function and removes it from the scene to prevent clutter
+                if (userInfo["node"] != nil){
+                    let lastNode = userInfo["node"] as! SKSpriteNode
+                    lastNode.removeFromParent()
+                }
+                //randomly picks an occupied grid point as the building next to which this car will drive
+                let index = Int.random(in: 0 ... usedPoints.count-1)
+                var startPos  = usedPoints[index]
+                let size = CGSize(width:100, height: 100)
+                //randomly selects whether the car will drive towards the top or bottom left of the screen
+                let direction = Bool.random()
+                var relevantTexture : [SKTexture] = []
+                var pathx:CGFloat
+                var pathy:CGFloat
+                if(direction){
+                    //based on the location of chosen gridpoint, extrapolates a starting point to the right of the screen edge that would allow the car to drive next to the chosen gridpoint as part of its path
+                    startPos.x = startPos.x + 128 + CGFloat(Int.random(in: 30 ... 50))+900
+                    startPos.y = startPos.y - 30 - CGFloat(Int.random(in: 30 ... 50))+600
+                    //sets the animation frames for a car moving to the bottom left of the screen
+                    relevantTexture = car1Frames
+                    //sets a path that will conform to the geometry of the isometric space
+                    pathx = -1800
+                    pathy = -1200
+                }
+                else{
+                    //based on the location of chosen gridpoint, extrapolates a starting point to the right of the screen edge that would allow the car to drive next to the chosen gridpoint as part of its path
+                    startPos.x = startPos.x - 30 - CGFloat(Int.random(in: 20 ... 50))+600
+                    startPos.y = startPos.y - 128 - CGFloat(Int.random(in: 0 ... 50))-300
+                    //sets the animation frames for a car moving to the top left of the screen
+                    relevantTexture = car2Frames
+                    //sets a path that will conform to the geometry of the isometric space
+                    pathx = -1800
+                    pathy = 900
+                }
+                //builds the car node
+                let car = SKSpriteNode(texture: relevantTexture[0], size: size)
+                //adds the car to the scene
+                addChild(car)
+                car.position = startPos
+                //sets the car's z position to be the inverse of it's y position
+                car.zPosition = -car.position.y
+                let processAnim = SKAction.animate(with: relevantTexture, timePerFrame: 0.1)
+                //randomly determines the duration of the car's motion to set the car's speed
+                let duration = Int.random(in: 2 ... 7)
+                //updates the car's z value based on its new y position after moving, to maintain consistency of isometric layers
+                let updateZ = SKAction.customAction(withDuration: 0.5){
+                    (node, elapsedTime) in
+                    if let node = node as? SKSpriteNode{
+                        node.zPosition = -node.position.y
+
+                    }
+                }
+                let move = SKAction.moveBy(x: pathx, y: pathy, duration: TimeInterval(duration))
+
+                //runs the movement of the car, the car's animation and the car's updateZ function
+                car.run(SKAction.group([move, SKAction.repeatForever(updateZ),  SKAction.repeatForever(processAnim)]))
+                //spawns a random new car after a slight delay
+                Timer.scheduledTimer(timeInterval: TimeInterval(duration), target: self, selector: #selector(spawnCar), userInfo: ["node": car], repeats: false)
+            }
+            //governs the evolution process of a building foundation. Passes in as an argument the timer that called it
+            @objc func upgrade(timer: Timer){
+
+                let userInfo = timer.userInfo as! Dictionary<String, AnyObject>
+                //gets the node that called upgrade
+                let lastNode = userInfo["node"] as! SKSpriteNode
+                //keeps track of which iteration of upgrade the node is on
+                let status = userInfo["status"] as! Int
+
+
+                var size = CGSize(width:256, height:256)
+                //sets the position of the new building node to be equal to the node that spawned it
+                var pos = lastNode.position
+                // pluck out relevant texture to map to next object
+                var relevantTexture : [SKTexture] = []
+                switch status {
+                case 0:
+                    //construction cloud animation
+                    relevantTexture = buildprocessFrames
+                case 1:
+                    //animation for one-storey building
+                    relevantTexture = buildingFrames
+                case 2:
+                    relevantTexture = buildprocessFrames //construction cloud animation
+                case 3:
+                    //animation for two-storey building
+                    relevantTexture = buildingFrames2
+                case 4:
+                    //construction cloud animation
+                    relevantTexture = buildprocessFrames
+                case 5:
+                    //animation for skyscraper
+                    relevantTexture = buildingFrames3
+                    //adjusts size and position of node for the taller skyscraper animations
+                    size = CGSize(width:256, height:512)
+                    pos.y = pos.y+128
+                case 6:
+
+                    relevantTexture = buildingFrames3
+                    size = CGSize(width:256, height:512)
+
+
+                default:
+
+                    relevantTexture = buildingFrames
+                }
+                //builds new building node
+                let building = SKSpriteNode(texture: relevantTexture[0], size: size)
+                //adds building to scene
+                addChild(building)
+
+                building.position = pos
+                building.zPosition = -building.position.y
+                if(status >= 5){
+                    //adjusts z position to be center of gravity of a 256x256 node rather than a 256x512 node to ensure that z position doesn't change between upgrades
+                    building.zPosition = -building.position.y + 128
+                }
+                //animates building
+                let processAnim = SKAction.animate(with: relevantTexture, timePerFrame: 0.15)
+                building.run(SKAction.repeatForever(processAnim))
+                //removes last node from scene to reduce clutter
+                lastNode.removeFromParent()
+                //if skyscraper is spawned, spawn a pothole next to the skyscraper corner
+                if(status == 5){
+                    let pothole = SKSpriteNode(texture: potholeFrames[0], size : CGSize(width:60, height:30))
+                    pothole.position.y = pos.y - 256
+                    pothole.position.x = pos.x + 30
+                    //set pothole zposition so that cars will appear to always drive above it in the scene
+                    pothole.zPosition = -2000
+                    //add pothole to scene
+                    addChild(pothole)
+                    //set timer to call pothole action after 30 to 45 seconds
+                    Timer.scheduledTimer(timeInterval: 30.0 + TimeInterval.random(in: 0 ... 15), target: self, selector: #selector(swampman), userInfo: ["node": pothole], repeats: false)
+                }
+                if(status<=5 && status % 2 == 0){
+                    //if next iteration of upgrade is a construction cloud scene, spawn after 5 seconds
+                    Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(upgrade), userInfo: ["node": building, "status": status + 1], repeats: false)
+                }
+                else if (status<=5){
+                    //otherwise, spawn next iteration of upgrade in 15 to 25 seconds
+                    Timer.scheduledTimer(timeInterval: TimeInterval.random(in: 15 ... 25), target: self, selector: #selector(upgrade), userInfo: ["node": building, "status": status + 1], repeats: false)
+
+                }
+
+
+
+            }
+            //triggers swamp man to emerge from pothole. Passes in as argument the timer that calls it
+            @objc func swampman(timer: Timer){
+
+                let userInfo = timer.userInfo as! Dictionary<String, AnyObject>
+                //sets pothole to the pothole object the timer was called with
+                let pothole = userInfo["node"] as! SKSpriteNode
+                //animate pothole
+                let processAnim = SKAction.animate(with: potholeFrames, timePerFrame: 0.2)
+                pothole.run(processAnim)
+                //triggers timer to run pothole animations again randomly in 30 to 45 seconds.
+                Timer.scheduledTimer(timeInterval: 30.0 + TimeInterval.random(in: 0 ... 15), target: self, selector: #selector(swampman), userInfo: ["node": pothole], repeats: false)
+
+            }
+
+            //upon a touch by user
+            override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+                //confirms that touch is instantiated
+                guard let touch = touches.first else {
+                    return
+                }
+                //removes background image from scene
+                background.removeFromParent()
+                //builds wiggly sprite in location of user's finger (as if user's finger is pinning sprite to the screen)
+                wiggly = buildwiggly()
+
+                wiggly.position = touch.location(in: self)
+
+            }
+            //handles instance when user's finger moves
+            override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+                guard let touch = touches.first else {
+                    return
+                }
+                //updates wiggly sprite's position to be the new location of the user's finger
+                wiggly.position = touch.location(in: self)
+            }
+            //handles instance when user lifts finger from screen
+            override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+                //when user lifts finger, call builddrop and drop a building foundation on last location of user's finger
+                buildDrop()
+                //remove wiggly from scene now that the wiggly character has appeared in the animations for the construction cloud in buildDrop
+                wiggly.removeFromParent()
+            }
+        }
+        //sets up SKView with white background color
+        let  view = SKView(frame: CGRect(x:0 , y:0, width:600, height:800))
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.showsFPS = true
+        view.ignoresSiblingOrder = true
+        view.showsNodeCount = true
+
+        // Create the scene programmatically
+        let scene = GameScene(size: view.bounds.size)
+        scene.scaleMode = .aspectFill
+        scene.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        //presents the scene in view
+        view.presentScene(scene)
+
+        PlaygroundPage.current.liveView = view
+
+
+
+<pre></div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+<div id = "end">
+
+
+    <div class = "cp">
+      <p>
+        &copy; 2019 all rights reserved Mohar Kalra.
+      </p>
+
+  </div>
+</div>
+
+
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+
+  </html>

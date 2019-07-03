@@ -1,0 +1,187 @@
+<!--
+
+
+
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Beat Detector</title>
+  <meta name="description" content="Portfolio">
+  <meta name="author" content="Mohar Kalra">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/style3.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--  <link rel="icon" type="image/png" href="images/favicon.png">-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+  </head>
+  <body>
+
+
+
+        <div  class = "nav">
+    <div class = "container">
+      <div class = "three columns ">
+          <a href="index.html#about" class = "big" >ABOUT</a>
+
+      </div>
+    <div class = "three columns ">
+        <a href="index.html#tech1" class = "big">TECH</a>
+
+    </div>
+    <div class = "three columns ">
+        <a href="index.html#ad"  class = "big">ART</a>
+
+    </div>
+    <div class = "three columns">
+        <a href="index.html#contact"  class = "big">CONTACT</a>
+
+    </div>
+    </div>
+    </div>
+
+
+
+<div id = "about" class = "about">
+  <span  class = " sec">
+          <h3>Beat Detector</h3>
+
+    <div class = "row bout">
+      <div class = "six columns">
+        <div class = "me">
+
+          <h4>Background</h4>
+          <p><i>Spring 2019</i></p>
+          <p>Built as the final project for my ELEN 3083 Electronic Circuits Lab at school, I built the following circuit which detects beats in an audio input.</p>
+      </div>
+      </div>
+    <div class = "six columns">
+      <div class = "me">
+        <h4>Objective</h4>
+          <p>Intended as an exercise to build off of for a future project, I decided to build a circuit that would take in an audio input, modify it and feed the modified signal to two LEDs. The first LED would light up when a beat occurs in the bass line of the input. Likewise, the second LED would light up when a beat occurs in the melody of the input.</p>
+    </div>
+    </div>
+  </div>
+</span>
+</div>
+
+
+
+      <div class = "row comic">
+
+
+
+
+          <h4>Circuit Design:</h4>
+            <ul >
+                <p>Task:</p><li>Isolate respectively the bass and melody of an audio input into two amplified signals</li><li>
+                Indicate when a peak in each signal is present</li>
+              <p>Parameters:</p><li>Must be able to filter input into signals with discrete peaks presenting at a frequency of 10 Hz or less to ensure peaks are visible to human eyes when passed through LEDs</li><li>
+              Smooth peaks with capacitors such that LEDs fade out after a pulse occurs rather than turning off immediately</li><li>
+              Rapid signal filtering to ensure that there is no latency between audio input and the generated LED pulses</li>
+              </ul>
+              <div class = "sec1">
+                  <p>Circuit Diagram:</p>
+
+                <img class = "pic" src="Beatschem.JPG" style = "width:100%; height:auto; padding-top: 20px;padding-bottom:20px;">
+
+              </div>
+              <ul>
+              <p>Solution:</p><li>Amplify signal with inverting amplifier by 101x to make it easier to perform operations on signal</li><li>
+
+              Split signal into two</li><li>
+              Send one branch of signal through low-pass filter with corner frequency of 106 Hz, because bass of audio is 60-100 Hz </li><li>
+              Send other branch of signal through high-pass filter with corner frequency of 1061 Hz, because mid-range is 500-2,000 Hz</li><li>
+              Buffer each signal and send each through precision peak detector with 47 nF smoothing capacitor to produce discrete, rectified peaks at lower frequency than input signal</li><li>
+              Buffer each signal and send each into an op-amp comparator with switching threshold of 6.68V to ensure that signal switches rarely enough to be visible to the human eye when passed through LEDs</li><li>
+              Buffer each effectively digital signal produced by comparator and send each into a green and yellow LED respectively to indicate when a beat is detected</li><li>
+              Place 100nF smoothing capacitor and 10K resistor in parallel with each LED to smooth the drop off after each peak that passes through each LED</li>
+
+
+            <p>Missteps:</p><li>Initially forgot to place buffers between each section of the circuit, thereby rendering the entire circuit dysfunctional</li><li>
+
+            Initially passed each filtered signal through precision peak rectifier rather than precision peak detector. <ul>
+              <li>Realized rectified signal had peaks that were so frequent that LED appeared on perpetually</li>
+              <li>So added smoothing cap to consolidate high-frequency peaks</li>
+            </ul></li><li>
+            Initially passed rectified and smoothed signals through Schmitt Trigger instead of standard comaprator, thinking the output digital signal would be cleaner <ul>
+              <li>Forgot that Schmitt Trigger has positive and negative thresholds making it impossible to continuously switch with a rectified signal because negative threshold will never be passed</li>
+              <li>Reverted to standard comparator with only one positive switching threshold</li>
+            </ul></li>
+          </ul>
+
+          <div class = "sec1">
+              <p>Output Signal passed through LED from low-pass filtered signal with beats detected</p>
+
+            <img class = "pic" src="lowpass.png" style = "width:70%; height:auto; padding-top: 20px;padding-bottom:20px;">
+
+          </div>
+
+          <div class = "sec1">
+              <p>Output Signal passed through LED from high-pass filtered signal with beats detected</p>
+
+            <img class = "pic" src="highpass.png" style = "width:70%; height:auto; padding-top: 20px;padding-bottom:20px;">
+
+          </div>
+
+          <div class = "sec1">
+              <p>Demo with green LED following bass and yellow LED following melody</p>
+
+<iframe width="1120" height="630" src="https://www.youtube.com/embed/ynTmuP2e4mU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+</div>
+
+
+
+
+
+
+<div id = "end">
+
+
+    <div class = "cp">
+      <p>
+        &copy; 2019 all rights reserved Mohar Kalra.
+      </p>
+
+  </div>
+</div>
+
+
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+
+  </html>

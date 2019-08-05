@@ -581,13 +581,25 @@ margin-bottom: -35px;
 }
 
 }
+@media (max-width:1510px){
+.main .row {width:88%;}
+}
+@media (max-width:1470px){
+.main .row {width:90%;}
+}
+@media (max-width:1430px){
+.main .row {width:93%;}
+}
 @media (max-width:1400px){
+.main .row {width:95%;}
+}
+@media (max-width:1360px){
 
   .main  .three.columns{
     width:50%;
     margin-left:auto;
     margin-right:auto;
-  
+
     display: inline-flex;
 
   }

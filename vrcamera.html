@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>VR Camera</title>
+  <meta name="description" content="Portfolio">
+  <meta name="author" content="Mohar Kalra">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/style3.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--  <link rel="icon" type="image/png" href="images/favicon.png">-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+
+  </head>
+  <body>
+
+
+
+
+    <div  class = "nav">
+<div class = "container">
+  <div class = "four columns ">
+      <a href="index.html#about" class = "big" >ABOUT</a>
+
+  </div>
+<div class = "four columns ">
+    <a href="index.html#tech1" class = "big">PROJECTS</a>
+
+</div>
+
+<div class = "four columns">
+    <a href="index.html#contact"  class = "big">CONTACT</a>
+
+</div>
+</div>
+</div>
+
+
+<div id = "about" class = "about">
+  <span  class = " sec">
+          <h3>VR Camera</h3>
+    <div class = "row bout">
+        <div class = "six columns">
+          <div class = "me">
+
+
+
+
+            <p>When we look upon the world, our brains see symbols. Looking at a tree, I abstract away all of its unique identifying features and assign to it the label “tree”. When I see this tree, I see not that specific tree, but rather my mental image of what “tree” looks like based on all of the trees I have ever seen in my life. In the process, I begin to lose the ability to meaningfully engage with all the diverse visual stimuli in the world around me.</p>
+        </div>
+        </div>
+      <div class = "six columns">
+        <div class = "me">
+
+          <p> <i>VR Camera</i> erodes wearers’ sense of 3D space and presents the world as a Brakhagian, disoriented 2D canvas, populated only with visual form, and time to revel in the richness of one’s own vision. Transparent LCDs on each eye are connected to an accelerometer and obscure completely if the wearer moves too quickly, disrupting the continuity between what one sees from one vantage point to the next and reframing the world as an alternate reality of camera-made fixed images.
+</p>
+          <p><i>Summer 2020</i></p>
+      </div>
+      </div>
+
+  </div>
+</span>
+</div>
+
+
+<div class = "row comic">
+
+
+  <div class = "sec1">
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="IMG_8365.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="IMG_8362.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+      <div class="mySlides">
+
+        <img class = "pic1" src="IMG_4770.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="IMG_8375.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+
+
+
+
+
+      <!-- Next/previous controls -->
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+</div>
+      <iframe style = "width: 65%; height: 540px" src="https://www.youtube.com/embed/W-KTZVl7BdU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4>Technical Design:</h4>
+          <ul >
+            <li>An ESP32 module populates two transparent SSD1309 driven LCD dsiplays with a random pattern of squares on start-up, unpredictably obscuring parts of the wearer's vision to disorient them.</li><li>
+              The ESP32 reads rotation data from an MPU9250 accelerometer to track the wearer's head movements</li>
+              <li> If the wearer moves their head slowly, the LCD displays scroll inertially. To obtain this effect, part of the Arduino LCD library had to be rewritten to correctly set the LCD registers</li><li>
+          If the wearer moves their head too quickly, both LCD's become filled with activated pixels for a few seconds and then are reset with a new pattern of squares to disrupt the wearer's mental map of space </li>
+
+
+            </ul>
+
+                <h4><a href = "https://github.com/moharkalra/Goggles" style = "color: rgb(22, 28, 250)"><i><u>Github</u></i></a></h4>
+
+  </div>
+
+</div>
+
+      <!--  <div class = "container">
+            <div class = "row comic">
+              <div class = "twelve columns">
+
+
+
+                <h4>Where to Buy:</h4>
+                <p>Print:</p>
+                  <ul>
+                    <li><a href = "https://atomicbooks.com/products/concerted-efforts" style = "color: black"><i><u>Atomic Books</u></i></a>, Baltimore, Maryland</li>
+                    <li><a href = "https://www.quimbys.com/store/8506"style = "color: black"><i><u>Quimby's</u></i></a>, Chicago, Illinois</li>
+                    <li><i>Desert Island Comics</i>, Brooklyn, New York</li>
+                    <li><i>Emerald City Comics</i>, Clearwater, Florida</li>
+                    <li><i>Black Crow Coffee</i>, St. Petersburg, Florida</li>
+                    <li><i>Daddy Kool Records</i>, St. Petersburg, Florida</li>
+                    <li><i>Feed Your Imagination</i>, St. Petersburg, Florida</li>
+                  </ul>
+                  <p>Digital:</p>
+                  <ul>
+                    <li><a href = "http://bit.ly/2vpKMdo" style = "color: black"><i><u>Comixology</u></i></a></li>
+
+                  </ul>
+                  </div>
+            </div>
+      </div>
+
+      </div>-->
+
+
+
+<div id = "end">
+
+
+    <div class = "cp">
+      <p>
+        &copy; 2020 all rights reserved Mohar Kalra.
+      </p>
+
+  </div>
+</div>
+
+
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+  <script>
+  // Open the Modal
+  function openModal() {
+    document.getElementById('myModal').style.display = "block";
+  }
+
+  // Close the Modal
+  function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+  }
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
+  </html>

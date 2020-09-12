@@ -264,7 +264,17 @@ margin-right:auto;
 
 }
 
+.modal-content-inner {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding-top: 50px;
+    padding-bottom: 50px;
+  width: 80%;
+  max-width: 1200px;
 
+
+}
 
 
 

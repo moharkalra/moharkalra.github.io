@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Oracle of NumPy</title>
+  <meta name="description" content="Portfolio">
+  <meta name="author" content="Mohar Kalra">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/style3.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--  <link rel="icon" type="image/png" href="images/favicon.png">-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+
+  </head>
+  <body>
+
+
+
+
+    <div  class = "nav">
+<div class = "container">
+  <div class = "four columns ">
+      <a href="index.html#about" class = "big" >ABOUT</a>
+
+  </div>
+<div class = "four columns ">
+    <a href="index.html#tech1" class = "big">PROJECTS</a>
+
+</div>
+
+<div class = "four columns">
+    <a href="index.html#contact"  class = "big">CONTACT</a>
+
+</div>
+</div>
+</div>
+
+
+<div id = "about" class = "about">
+  <span  class = " sec">
+          <h3>Oracle of NumPy</h3>
+    <div class = "row bout">
+        <div class = "six columns">
+          <div class = "me">
+
+
+
+
+            <p>Online the interactions we have with each other are very deliberate and premeditated. From the polished digital profiles we wear for ourselves, we send volleys of considered messages back and forth to one another. I think and then I respond to you. You think and then respond to me in turn. There is little room for instinct or the unexpected in our interactions online.</p>
+
+        </div>
+        </div>
+      <div class = "six columns">
+        <div class = "me">
+
+          <p> Indeed, we are our most authentic and spontaneous selves online when we are privately browsing on our own, flitting from link to link. To capture the serendipity of real life in our very deliberate online interactions, the Oracle gifts you your true face whenever you land on the same site as a friend, pulling uncertainty into the otherwise certain. </p>
+          <p><i>Summer 2020</i></p>
+      </div>
+      </div>
+
+  </div>
+</span>
+</div>
+
+
+<div class = "row comic">
+
+
+  <div class = "sec1">
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="Oracle.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="Oracle2.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+
+
+      <!-- Next/previous controls -->
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+</div>
+      <iframe style = "width: 80%; height: 630px" src="https://www.youtube.com/embed/B_udn3u60Gg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4>Technical Design:</h4>
+          <ul >
+            <li>Users login to the Oracle of NumPy Chrome extension on their browser using Facebook</li><li>
+              Facebook API is used to get a list of user friends who also use Oracle of NumPy</li>
+              <li> Chrome extension interfaces with Firebase database that tracks the current tab each user is currently browsing on </li><li>
+          Chrome Extension background script scrapes all links on page when the user visits a page, follows those links and scrapes all links on each of the resulting pages. </li><li>
+            All of these links are corss-referenced with the pages each of the user's friends are on according to the Firebase database </li><li>
+
+          If the user is within 1 click of a link from being on the same web domain as one of their friends, the user will receive a notification</li><li>
+            If the user lands on the same web domain as one of the friends, an HTTP POST request is sent to a python server running on each user's computer </li><li>
+              Python server then accesses the user's webcam, takes a picture of the user, makes the picture a black and white image, and superimposes a border on the image to make it look like a postcard</li><li>
+                Python script converts the resulting image to a bitmap array and streams that array over Serial USB connection to the Oracle of NumPy sculpture</li><li>
+                The sculpture begins to light up and whir with LEDs and servos as a radio tunes into the local NPR station and the bitmap array is printed out on receipt paper</li><li>
+                  The sculpture is controlled by an ESP32 module connected to a thermal printer, an Si4703 radio module, neopixel LEDs and SG90 servos</li><li>
+                      The Si4703 radio output is passed through an LM386 op-amp audio amplifier connected to a speaker</li>
+
+            </ul>
+
+                <h4><a href = "https://github.com/moharkalra/Oracle/tree/master/OracleOfNumpy" style = "color: rgb(22, 28, 250)"><i><u>Github</u></i></a></h4>
+
+  </div>
+
+</div>
+
+      <!--  <div class = "container">
+            <div class = "row comic">
+              <div class = "twelve columns">
+
+
+
+                <h4>Where to Buy:</h4>
+                <p>Print:</p>
+                  <ul>
+                    <li><a href = "https://atomicbooks.com/products/concerted-efforts" style = "color: black"><i><u>Atomic Books</u></i></a>, Baltimore, Maryland</li>
+                    <li><a href = "https://www.quimbys.com/store/8506"style = "color: black"><i><u>Quimby's</u></i></a>, Chicago, Illinois</li>
+                    <li><i>Desert Island Comics</i>, Brooklyn, New York</li>
+                    <li><i>Emerald City Comics</i>, Clearwater, Florida</li>
+                    <li><i>Black Crow Coffee</i>, St. Petersburg, Florida</li>
+                    <li><i>Daddy Kool Records</i>, St. Petersburg, Florida</li>
+                    <li><i>Feed Your Imagination</i>, St. Petersburg, Florida</li>
+                  </ul>
+                  <p>Digital:</p>
+                  <ul>
+                    <li><a href = "http://bit.ly/2vpKMdo" style = "color: black"><i><u>Comixology</u></i></a></li>
+
+                  </ul>
+                  </div>
+            </div>
+      </div>
+
+      </div>-->
+
+
+
+<div id = "end">
+
+
+    <div class = "cp">
+      <p>
+        &copy; 2020 all rights reserved Mohar Kalra.
+      </p>
+
+  </div>
+</div>
+
+
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+  <script>
+  // Open the Modal
+  function openModal() {
+    document.getElementById('myModal').style.display = "block";
+  }
+
+  // Close the Modal
+  function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+  }
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
+  </html>

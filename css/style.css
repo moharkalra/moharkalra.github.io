@@ -327,6 +327,12 @@ vertical-align: top;
   left:-50px;
 
 }
+.techpic{
+  position:relative;
+  height:400px;
+  top:100px;
+  left:-150px;
+}
 .banpic{
   position:relative;
   height:400px;

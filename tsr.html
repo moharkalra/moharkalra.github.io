@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Oracle of NumPy</title>
+  <title>Transmitter / Signal / Receiver</title>
   <meta name="description" content="Portfolio">
   <meta name="author" content="Mohar Kalra">
 
@@ -63,7 +63,7 @@
 
 <div id = "about" class = "about">
   <span  class = " sec">
-          <h3>Oracle of NumPy</h3>
+          <h3>Transmitter / Signal / Receiver</h3>
     <div class = "row bout">
         <div class = "six columns">
           <div class = "me">
@@ -71,15 +71,14 @@
 
 
 
-            <p>Online the interactions we have with each other are very deliberate and premeditated. From the polished digital profiles we wear for ourselves, we send volleys of considered messages back and forth to one another. I think and then I respond to you. You think and then respond to me in turn. There is little room for instinct or the unexpected in our interactions online.</p>
-
+            <p>T/S/R is a belt with four bright headlights projecting horizontally outwards around the wearer. An FM radio plays in the wearer’s ears and the strength of the radio signal correlates with the angle of the headlights. The clearer the signal and the closer to “civilization” the wearer is, the headlights point outwards, projecting light far from the wearer. If the signal is faint, the headlights point downward to the wearer’s feet and the radio in wearers’ ears is replaced with the haunting crackle of naturally occurring low-frequency radio signals in their surroundings. </p>
         </div>
         </div>
       <div class = "six columns">
         <div class = "me">
 
-          <p> Indeed, we are our most authentic and spontaneous selves online when we are privately browsing on our own, flitting from link to link. To capture the serendipity of real life in our very deliberate online interactions, the Oracle gifts you your true face whenever you land on the same site as a friend, pulling uncertainty into the otherwise certain. </p>
-          <p><i>Summer 2020</i></p>
+          <p>In the dark, navigating a space with light projected far outwards, wearer’s lose sight of their body, living several meters into their spatial future. Wearers become a server, seeking with pings of light - a specter in the dark. When navigating with light projected at their feet, wearers have no future to react to. Their light is not a probe but rather a beacon, announcing “I’m here” on behalf of both themselves and their surroundings. In the process, I hope wearers reflect on their relationship to natural spaces around them as they transition between intruder and native. </p>
+          <p><i>Fall 2020</i></p>
       </div>
       </div>
 
@@ -98,15 +97,18 @@
 
       <div class="mySlides">
 
-        <img class = "pic1" src="Oracle.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+        <img class = "pic1" src="TSR1.jpg" alt = "banner" style="max-width:80% ; height:auto;">
       </div>
 
       <div class="mySlides">
 
-        <img class = "pic1" src="Oracle2.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+        <img class = "pic1" src="TSR2.jpg" alt = "banner" style="max-width:80% ; height:auto;">
       </div>
 
+      <div class="mySlides">
 
+        <img class = "pic1" src="TSR3.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
 
       <!-- Next/previous controls -->
 
@@ -115,26 +117,29 @@
 
   </div>
 </div>
-      <iframe style = "width: 80%; height: 630px; margin-bottom: 50px" src="https://www.youtube.com/embed/B_udn3u60Gg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h4>Technical Design:</h4>
-          <ul >
-            <li>Users login to the Oracle of NumPy Chrome extension on their browser using Facebook</li><li>
-              Facebook API is used to get a list of user friends who also use Oracle of NumPy</li>
-              <li> Chrome extension interfaces with Firebase database that tracks the current tab each user is currently browsing on </li><li>
-          Chrome Extension background script scrapes all links on page when the user visits a page, follows those links and scrapes all links on each of the resulting pages. </li><li>
-            All of these links are corss-referenced with the pages each of the user's friends are on according to the Firebase database </li><li>
+      <iframe style = "width: 80%; height: 630px; margin-bottom: 50px" src="https://www.youtube.com/embed/qdaWjzZ_2c4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-          If the user is within 1 click of a link from being on the same web domain as one of their friends, the user will receive a notification</li><li>
-            If the user lands on the same web domain as one of the friends, an HTTP POST request is sent to a python server running on each user's computer </li><li>
-              Python server then accesses the user's webcam, takes a picture of the user, makes the picture a black and white image, and superimposes a border on the image to make it look like a postcard</li><li>
-                Python script converts the resulting image to a bitmap array and streams that array over Serial USB connection to the Oracle of NumPy sculpture</li><li>
-                The sculpture begins to light up and whir with LEDs and servos as a radio tunes into the local NPR station and the bitmap array is printed out on receipt paper</li><li>
-                  The sculpture is controlled by an ESP32 module connected to a thermal printer, an Si4703 radio module, neopixel LEDs and SG90 servos</li><li>
-                      The Si4703 radio output is passed through an LM386 op-amp audio amplifier connected to a speaker</li>
+          <ul >
+            <li>The belt consists of four headlamps with attached servos, a 6V battery to power the servos and Hammond diecast box containing:
+               <ul ><li>Si4703 FM radio receiver</li> <li>ATTiny84</li> <li>555 timer</li> <li> 9V battery</li> <li> 3.3 and 5 V voltage regulators</li> <li> 3.5 mm headphone receptacle whose input signal is controlled by a relay </li> <li> Very-Low-Frequency (VLF) natural radio receiver circuit and antenna</li></ul>
+            <li>All four headlamps on the light belt are connected to the 555 timer that generates a light pulse every second</li><li>
+              Servos connected to the ATTiny84 control the angle of each headlamp</li>
+              <li> The ATTiny84 is connected to the Si4703 FM radio receiver whose registers have been set to only detect stations above a set RSSI and SNR threshold </li><li>
+          If the station the Si4703 is tuned to has a strong signal, then the servos keep the headlamps pointed outwards</li><li>
+            If the station strength drops below a set RSSI threshold, the Si4703 seeks for another station of adequate strength </li><li>
+
+        If there are no stations with strong enough signal nearby, the servos point the headlamps downward </li><li>
+            Then the ATTiny triggers the relay to switch the audio input to the headphone jack from the FM receiver to the VLF receiver< </li><li>
+              The VLF receiver is based off of <a href = "http://techlib.com/electronics/VLFwhistle.htm#Peanut%20With%20No%20Hum" style = "color: rgb(22, 28, 250)"><i><u>Charles Wenzel's Hum-bugged circuit</u></i></a></li><li>
+              The antenna signal is passed through a 60 Hz notch filter to attenuate power line noise and then amplified through a dual op-amp to the headphone jack</li><li>
+                A ground wire connected to the Hammond Box body can be tucked into wearer's waistband to ground the entire circuit</li><li>
+        In the background, the Si4703 is still seeking any radio stations with adequate signal</li><li>
+                  If a strong radio station is found, the ATTiny triggers the relay to send the Si4703 audio output to the headphone jack again</li>
+
 
             </ul>
 
-                <h4><a href = "https://github.com/moharkalra/Oracle/tree/master/OracleOfNumpy" style = "color: rgb(22, 28, 250)"><i><u>Github</u></i></a></h4>
+                <h4><a href = "https://github.com/moharkalra/LightRadio" style = "color: rgb(22, 28, 250)"><i><u>Github</u></i></a></h4>
 
   </div>
 

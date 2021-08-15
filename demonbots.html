@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Demon Bots</title>
+  <meta name="description" content="Portfolio">
+  <meta name="author" content="Mohar Kalra">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/style3.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--  <link rel="icon" type="image/png" href="images/favicon.png">-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+
+  </head>
+  <body>
+
+
+
+
+    <div  class = "nav">
+<div class = "container">
+  <div class = "four columns ">
+      <a href="index.html#about" class = "big" >ABOUT</a>
+
+  </div>
+<div class = "four columns ">
+    <a href="index.html#tech1" class = "big">PROJECTS</a>
+
+</div>
+
+<div class = "four columns">
+    <a href="index.html#contact"  class = "big">CONTACT</a>
+
+</div>
+</div>
+</div>
+
+
+<div id = "about" class = "about">
+  <span  class = " sec">
+          <h3>Hello, I Am the Voice in Your Head. Light Me up or Put Me Out</h3>
+    <div class = "row bout">
+        <div class = "six columns">
+          <div class = "me">
+            <h5><i>Demon Bot #1</i></h5>
+
+            <p>We all have inner demons - of addictions, compulsions, and insecurities, of people, times or places we have left behind, or wish to escape to and of the figures or past selves we subconsciously hold ourselves to. These voices haunt us and demand to be acknowledged, reasoned with and talked down, as if they know something we don’t, yet sometimes these voices are hollow, appearing as an unconscious fight-or-flight response to some external trigger - an if-then statement taken to an extreme. This wearable mechanical artwork, the first in a series of “Demon Bots”, acts as a theatrical surrogate for the wearer’s demons, exploring how one’s consciousness might be distributed and recontextualized beyond the self through conversation with programmed entities.</p>
+        </div>
+        </div>
+      <div class = "six columns">
+        <div class = "me">
+
+          <p>Before using the bot, wearers must decide on an Icon representing their inner demon and place it in the locket mounted on the work, as an offering of sorts. Like a rubber band on one’s wrist snapped to ward off intrusive thoughts, whenever faced with the demon in their head, wearers must light the candle on the work. The locket will spring open and the work will begin repeatedly slapping the wearer’s wrist with a rubber band. The icon in the locket, animated by the repetitive, mechanical behavior of the rubber slapper, juxtaposes the superficial sentience we are willing to give our inner compulsions with their potentially programmatic nature. As such, the work asks wearers to reflect on how they wish to view their vices and compulsions – as inherent parts of their selves worth marinating in, or simply as errant subroutines of their lizard brains. The decision to put out the candle or let it run down depends on how the wearer responds.  </p>
+          <p><i>Spring 2021</i></p>
+      </div>
+      </div>
+
+  </div>
+</span>
+</div>
+
+
+<div class = "row comic">
+
+
+
+  <div class = "sec1">
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="DemonBot1Main - web.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="DemonBot1detail2.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="DemonBot1detail3.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+      <div class="mySlides">
+
+        <img class = "pic1" src="DemonBot1detail1.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+      <!-- Next/previous controls -->
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+</div>
+      <iframe style = "width: 80%; height: 630px; margin-bottom: 50px" src="https://www.youtube.com/embed/XZKZ1o4yZvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+          <ul >
+            <li>The device consists of two servos powered by a 6V lithium ion battery mounted on a metal watch body</li>
+            <li>The battery output is fed through an L7805 5V voltage regulator to power an ATTiny84 which controls the servos</li><li>
+            The ATTiny is also connected to a TMP36 temperature sensor mounted on the heat-resistant Lexan tube that contains the attached candle</li>
+            The TMP36 is mounted such that it can read temperature data from immediately above the candle </li><li>
+              <li>When the temperature sampled over a 2 second period begins rising at a rate above a pre-set threshold (indicating that the candle has been lit), the ATTiny turns on the two servos</li><li>
+          One servo will open the mounted locket, revealing the wearer's chosen icon</li><li>
+
+
+        The other servo will begin spinning against the wearer's wrist rubber band, slapping it continuously against their wrist</li><li>
+          If TMP's temperature reading quickly begins decreasing (indicating that the candle has been blown out), the two servos will stop and the locket will be closed</li>
+
+
+            </ul>
+
+                <h4><a href = "https://github.com/moharkalra/Demon-Bots" style = "color: rgb(22, 28, 250)"><i><u>Github</u></i></a></h4>
+
+  </div>
+
+</div>
+
+
+
+
+
+<div id = "end">
+
+
+    <div class = "cp">
+      <p>
+        &copy; 2021 all rights reserved Mohar Kalra.
+      </p>
+
+  </div>
+</div>
+
+
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+  <script>
+  // Open the Modal
+  function openModal() {
+    document.getElementById('myModal').style.display = "block";
+  }
+
+  // Close the Modal
+  function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+  }
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
+  </html>

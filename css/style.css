@@ -360,6 +360,7 @@ Purple: 150, 0, 255*/
 
 width: 100%;
 max-width:100%;
+min-height: 425px;
   overflow: hidden;
 }
 .about img{
@@ -581,12 +582,7 @@ margin-bottom: -35px;
 .desc p{
   padding-bottom: 5px;
 }
-@media (max-width:600px){
-.about img{
-  left:-350px;
-}
 
-}
 @media (max-width:1510px){
 .main .row {width:88%;}
 }
@@ -664,6 +660,9 @@ margin-bottom: -35px;
   margin-left: auto;
     margin-right: auto;
 
+  }
+  .about img{
+    left:-350px;
   }
 }
 @media(max-width:600px){
@@ -746,6 +745,7 @@ margin-bottom:15px;
   padding-bottom: 590px;
   margin-left: auto;
   margin-right: auto;
+  min-height: 0px;
 }
 .me{
   width:80%;

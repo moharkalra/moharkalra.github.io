@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Demon Bot 2</title>
+  <meta name="description" content="Portfolio">
+  <meta name="author" content="Mohar Kalra">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/style3.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--  <link rel="icon" type="image/png" href="images/favicon.png">-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+
+  </head>
+  <body>
+
+
+
+
+    <div  class = "nav">
+<div class = "container">
+  <div class = "four columns ">
+      <a href="index.html#about" class = "big" >ABOUT</a>
+
+  </div>
+<div class = "four columns ">
+    <a href="index.html#tech1" class = "big">PROJECTS</a>
+
+</div>
+
+<div class = "four columns">
+    <a href="index.html#contact"  class = "big">CONTACT</a>
+
+</div>
+</div>
+</div>
+
+
+<div id = "about" class = "about">
+  <span  class = " sec">
+          <h3>FOMO Machine</h3>
+    <div class = "row bout">
+        <div class = "six columns">
+          <div class = "me">
+            <h5><i>Demon Bot #2</i></h5>
+
+            <p>The second piece in my series “Demon Bots”, “FOMO Machine” is a chrome extension that, whenever you try to log into social media, presents you with 9 images mined from your social media feeds and provokes you to select all the images that seem better (more fun, more exciting, more productive etc) than your day thus far in order to prove that you are indeed not a robot. Select any of the images and the captcha results will be inconclusive. </p>
+
+        </div>
+        </div>
+      <div class = "six columns">
+        <div class = "me">
+          <br></br>
+          <p>Select none and you can proceed to your desired destination. Alternatively, if you desire, you can outsource the expressing of your insecurity to a bot which will select images for you. In this manner, “FOMO Machine” explores whether the feelings of insecurity that social media encourages us to addictively dwell on may condition our online selves to become more predictable, impressionable or even programmed.</p>
+            <p><i>Fall 2021</i></p>
+      </div>
+      </div>
+
+  </div>
+</span>
+</div>
+
+
+<div class = "row comic">
+
+
+
+  <div class = "sec1">
+
+
+      <iframe style = "width: 80%; height: 630px; margin-bottom: 50px" src="https://www.youtube.com/embed/cEAT9qz2udU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+          <ul >
+          The installation consists of two parts: A chrome extension running in the user's browser and a python script running a local server on the user's computer.
+          <br></br>
+          Set-up:
+            <li>The local python server is responsible for generating the captcha images</li>
+            <li>The user enters their instagram login info as an input to the python script and, upon running the server, the script will query instagram for a list of all accounts the user follows.</li><li>
+              The script then downloads the profile picture of each followed account, checks if there is a picture of a human in the profile picture using openCV and then deletes the downloaded image.</li><li>
+              If a human is detected, then the queried account's instagram profile ID number is saved to a list of followed accounts in the python script's directory.</li><li>
+              By confirming that a human is in the profile picture of each followed user, the python script ensures that it has a list of users whose posts will likely contain photographic content rather than illustration or infographic content which would likely be less FOMO inducing.</li><li>
+              The python script user's login info remains on their computer locally and the list of their followers also is only saved locally as an anonymized list of numeric codes that only Instagram's API can interpret. Nothing can be accessed by the user that they cannot already access through instagram's website, and the user's data is not accessible by any remote source outside their computer.</li><li>
+              The follower list only needs to be populated once - when the user first starts the FOMO machine.</li>
+          Usage:
+            <li>The chrome extension triggers whenever the user navigates to a page with an "instagram" or "facebook" domain.</li><li>
+            The user is redirected to a custom, locally hosted web-page with the FOMO captcha on it, modelled using modified HTML and CSS from <a href="https://www.google.com/recaptcha/api/fallback?k=6LdZ3QkTAAAAAE_Aex8XOxj5mAgAh_E0-KvpmYeS" style = "color: rgb(22, 28, 250)"><u>here.</u></a></li><li>
+
+            The chrome extension sends an HTTP request to the python server, indicating that it should generate images for the captcha.</li><li>
+            The chrome extension also sends the python script the URL that the user was attempting to access before being redirected. The python script saves this URL for when the user completes the captcha. </li><li>
+            While the python script is generating the captcha images, the chrome extension's captcha webpage displays with a randomized FOMO-inducing prompt and 9 loading images in place of the captcha images. </li><li>
+            The python script randomly picks three accounts from the user's followed account list and downloads each account's 5 most recent posted images using <a href = "https://github.com/arc298/instagram-scraper" style = "color: rgb(22, 28, 250)"><u>this instagram scraping code</u></a> as a foundation. </li><li>
+            The number of unique colors present in the 5 images are calculated and the first three images with more than 15,000 unique colors are selected, as these images are most likely to be photographs rather than graphics.</li><li>
+            If all the downloaded images have less than 15,000 unique colors, then the first three images from the account's posts are selected. </li><li>
+            Then the three selected images from each of the three accounts queried are selected and forwarded back to the chrome extension, where they are displayed for the user. </li><li>
+            If the user clicks on the checkbox for any of the images and then clicks "I am not a robot", they will be redirected to another page indicating that their test results were inconclusive. The user is then redirected back to the captcha page. </li><li>
+            If the user selects none of the images, or clicks on the "Help" button, which randomly selects from the 9 images, then the user will pass the captcha test and be redirected to a page indicating that they have been verified. </li><li>
+            The verification page sends an HTTP request to the python script to receive the URL that the user was originally trying to access. The python script responds and the user is redirected to their desired destination. </li><li>
+            Lastly, the python script then deletes all downloaded images from instagram as well as the stored URL the user was trying to access. </li>
+
+            </ul>
+
+                <h4><a href = "https://github.com/moharkalra/Demon-Bots" style = "color: rgb(22, 28, 250)"><i><u>Github</u></i></a></h4>
+
+  </div>
+
+</div>
+
+
+
+
+
+<div id = "end">
+
+
+    <div class = "cp">
+      <p>
+        &copy; 2021 all rights reserved Mohar Kalra.
+      </p>
+
+  </div>
+</div>
+
+
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+  <script>
+  // Open the Modal
+  function openModal() {
+    document.getElementById('myModal').style.display = "block";
+  }
+
+  // Close the Modal
+  function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+  }
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
+  </html>

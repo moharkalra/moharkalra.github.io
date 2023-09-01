@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Wooden Conversation</title>
+  <meta name="description" content="Portfolio">
+  <meta name="author" content="Mohar Kalra">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/style3.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--  <link rel="icon" type="image/png" href="images/favicon.png">-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+
+  </head>
+  <body>
+
+
+
+
+    <div  class = "nav">
+<div class = "container">
+  <div class = "four columns ">
+      <a href="index.html#about" class = "big" >ABOUT</a>
+
+  </div>
+<div class = "four columns ">
+    <a href="index.html#tech1" class = "big">PROJECTS</a>
+
+</div>
+
+<div class = "four columns">
+    <a href="index.html#contact"  class = "big">CONTACT</a>
+
+</div>
+</div>
+</div>
+
+
+<div id = "about" class = "about">
+  <span  class = " sec">
+          <h3>Wooden Conversation</h3>
+    <div class = "row bout">
+        <div class = "six columns">
+          <div class = "me">
+
+            <p>This project is installed at Maajaam art space as part of its Wild Bits Residency. The installation will be exhibited as part of the European Capital of Culture festivities taking place in Tartu, Estonia in 2024. The installation consists of a wooden door and frame placed in front of two intertwined trees in a grove on Maajaam’s wooded property. When the door is opened by a visitor, a cord stretching from the door’s interior to the top of the trees will pull the trees ever so slightly together so that they make a creaking noise. This noise will sound like the creak of a door opening, resulting in an act of ventriloquy where the tree makes the sound the door is expected to make when opening. Likewise, whenever the trees sway and creak in the wind, the cord will slacken, resulting in the door opening slightly in a “breathing” motion tuned to the trees’ rhythms. </p>
+
+        </div>
+        </div>
+      <div class = "six columns">
+        <div class = "me">
+
+          <p>The sounds of trees creaking and doors squeaking echo each other – the dead wooden product speaking with the voice of the tree and the tree’s voice made recognizable by its similarity to the product’s creak. They animate each other in a conversation transmitted through their shared material essence. Likewise, as the sound of a door opening implies someone present at the door, the work posits that the tree, the door and other wood objects gaze back upon the viewer, particularly when the door is opened by wind without the viewer’s intervention. I hope to dramatize the shared fibers between nature and our built environment, which we tend to separate, so we may better acknowledge our ties to the wild entities seeded into our lives.
+          </p>
+          <p><i>Summer 2022</i></p>
+          <p><i>Photos by Fotomorgaana and Footage by Epp Kubu</i></p>
+      </div>
+      </div>
+
+  </div>
+</span>
+</div>
+
+
+<div class = "row comic">
+
+
+
+  <div class = "sec1">
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="doors1.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="doors2.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="doors3.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+      <div class="mySlides">
+
+        <img class = "pic1" src="doors4.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+      <!-- Next/previous controls -->
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+</div>
+      <iframe style = "width: 80%; height: 630px; margin-bottom: 50px" src="https://www.youtube.com/embed/HacnGuDe6E0?si=M7QeP_a3L1DZpthK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+  </div>
+
+</div>
+
+
+
+
+
+<div id = "end">
+
+
+    <div class = "cp">
+      <p>
+        &copy; 2023 all rights reserved Mohar Kalra.
+      </p>
+
+  </div>
+</div>
+
+
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+  <script>
+  // Open the Modal
+  function openModal() {
+    document.getElementById('myModal').style.display = "block";
+  }
+
+  // Close the Modal
+  function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+  }
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
+  </html>

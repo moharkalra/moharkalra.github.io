@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Lighthouse</title>
+  <meta name="description" content="Portfolio">
+  <meta name="author" content="Mohar Kalra">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/style3.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--  <link rel="icon" type="image/png" href="images/favicon.png">-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+
+
+  </head>
+  <body>
+
+
+
+
+    <div  class = "nav">
+<div class = "container">
+  <div class = "four columns ">
+      <a href="index.html#about" class = "big" >ABOUT</a>
+
+  </div>
+<div class = "four columns ">
+    <a href="index.html#tech1" class = "big">PROJECTS</a>
+
+</div>
+
+<div class = "four columns">
+    <a href="index.html#contact"  class = "big">CONTACT</a>
+
+</div>
+</div>
+</div>
+
+
+<div id = "about" class = "about">
+  <span  class = " sec">
+          <h3>Lighthouse</h3>
+    <div class = "row bout">
+        <div class = "six columns">
+          <div class = "me">
+
+            <p>Installed on the mountains rising above the Bschlabertal river valley in Austria, are two weathervanes freely spinning in the wind, each with a signal mirror on top. The mirror is adjusted such that, when the sun is in the right position, the mirror, animated by the wind, will always be reflecting the sun's light towards one of the villages of the Bschlabertal.
+              </p> <p>Signal mirrors, which reflect the sun's light in narrow, directed beams up to 30 km away, were a form of optical signaling that made communication across vast landscapes like the Alps possible before modern communication tools. In the Bschlabertal, where high tech fiber optic internet cables are installed but remain unconnected to the main network, the prospect of communication with an increasingly modernized, globalized world outside the valley feels fraught.</p>
+        </div>
+        </div>
+      <div class = "six columns">
+        <div class = "me">
+
+          <p>So, for those who live in the valley, the artwork’s reflected light will appear as brief flashes from the mountain tops – a morse code communication from the land itself, which shapes the whorls and whims of the wind. It will beckon to lucky viewers, but always waver due to the wind, jumping from person to person across kilometers, and rewarding those who take the time to engage in this very local communication.</p><p>This project was produced as part of the Medienfrische 2023 festival in the Bschlabertal.   </p>
+          <p><i>Spring 2023</i></p>
+      </div>
+      </div>
+
+  </div>
+</span>
+</div>
+
+
+<div class = "row comic">
+
+
+
+  <div class = "sec1">
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="lighthouseInsta3.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="lighthouseflash1.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+
+      <div class="mySlides">
+
+        <img class = "pic1" src="lighthouseInsta1.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+      <div class="mySlides">
+
+        <img class = "pic1" src="lighthouseInsta5.jpg" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+      <div class="mySlides">
+
+        <img class = "pic1" src="lighthouseMap.png" alt = "banner" style="max-width:80% ; height:auto;">
+      </div>
+      <!-- Next/previous controls -->
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+</div>
+      <iframe style = "width: 80%; height: 630px; margin-bottom: 50px" src="https://www.youtube.com/embed/kfaXUTBz7vY?si=DEJoKpX3FGgxTGIb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      
+  </div>
+
+</div>
+
+
+
+
+
+<div id = "end">
+
+
+    <div class = "cp">
+      <p>
+        &copy; 2023 all rights reserved Mohar Kalra.
+      </p>
+
+  </div>
+</div>
+
+
+  <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+  <script>
+  // Open the Modal
+  function openModal() {
+    document.getElementById('myModal').style.display = "block";
+  }
+
+  // Close the Modal
+  function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+  }
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
+  </html>

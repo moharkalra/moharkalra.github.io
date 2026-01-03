@@ -26,6 +26,30 @@
   <link rel="stylesheet" href="css/skeleton.css">
 <link rel="stylesheet" href="css/style3.css">
 
+  <style>
+    /* Responsive video container */
+    .video-responsive {
+      position: relative;
+      width: 80%;
+      max-width: 100%;
+      margin: 0 auto 50px auto;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @media (max-width: 768px) {
+      .video-responsive {
+        width: 100%;
+      }
+    }
+  </style>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -120,7 +144,9 @@
 
   </div>
 </div>
-      <iframe style = "width: 80%; height: 630px; margin-bottom: 50px" src="https://www.youtube.com/embed/XZKZ1o4yZvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="video-responsive">
+        <iframe src="https://www.youtube.com/embed/XZKZ1o4yZvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
 
           <ul >
             <li>The device consists of two servos powered by a 6V lithium ion battery mounted on a metal watch body</li>

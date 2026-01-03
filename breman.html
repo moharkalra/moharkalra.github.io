@@ -24,8 +24,32 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
-<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="css/style3.css">
 
+  <style>
+    /* Responsive video container */
+    .video-responsive {
+      position: relative;
+      width: 80%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @media (max-width: 768px) {
+      .video-responsive {
+        width: 100%;
+      }
+    }
+  </style>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -86,10 +110,14 @@
 </div>
 
 
-  <div class = "comic">
+  <div class = "row comic">
+    <div class = "sec1">
+    <div class="video-responsive">
+      <iframe src="https://www.youtube.com/embed/hfWy0UteyqM?si=rQih725VbQ7n2Zuu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
   <div id="myModal" class="modal">
       <div class="modal-content">
-    <iframe style = "width: 80%; height: 630px" src="https://www.youtube.com/embed/hfWy0UteyqM?si=rQih725VbQ7n2Zuu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
 
     <div class="modal-content-inner">
     <div class="mySlides">
@@ -117,11 +145,14 @@
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
+  </div>
   <div class = "container">
     
     <p>A short film supported by the Bremen Filmburo was also produced around this installation:</p>
     <br></br>
-    <iframe style = "width: 80%; height: 630px" src="https://www.youtube.com/embed/MxEuT4D2Z88?si=OinohaBD0pnTGMdP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-responsive">
+      <iframe src="https://www.youtube.com/embed/MxEuT4D2Z88?si=OinohaBD0pnTGMdP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
     <br></br>
     <h4>Press Coverage</h4>
 

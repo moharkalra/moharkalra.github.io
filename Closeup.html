@@ -24,8 +24,32 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
-<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="css/style3.css">
 
+  <style>
+    /* Responsive video container */
+    .video-responsive {
+      position: relative;
+      width: 80%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @media (max-width: 768px) {
+      .video-responsive {
+        width: 100%;
+      }
+    }
+  </style>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -77,10 +101,14 @@
 
 
 
-  <div class = "comic">
+  <div class = "row comic">
+    <div class = "sec1">
+    <div class="video-responsive">
+      <iframe src="https://www.youtube.com/embed/xor9QWnHb08" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
   <div id="myModal" class="modal">
       <div class="modal-content">
-    <iframe style = "width: 80%; height: 630px" src="https://www.youtube.com/embed/xor9QWnHb08" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   
 
 
     <div class="modal-content-inner">
@@ -123,6 +151,8 @@
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
+</div>
+</div>
   <div class = "container">
     <h4>Technical Design</h4>
 
@@ -141,7 +171,6 @@
       <h4><a href = "https://github.com/moharkalra/Close-Up" style = "color: rgb(22, 28, 250)"><i><u>Github</u></i></a></h4>
 </div>
 
-</div>
 </div>
 </div>
 
